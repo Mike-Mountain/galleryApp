@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mountain-flow-state": {
+      "hosting": {
+        "FlowState": [
+          "mountain-flow-state"
+        ]
+      }
+    }
+  }
+}
