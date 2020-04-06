@@ -1,24 +1,26 @@
 <section class="authentication">
-  <div class="login-box">
-    <h3>Login</h3>
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <label>
-        Email
-        <input
-          id="email"
-          formControlName="email"
-        >
-      </label>
+  <div class="card">
+    <div class="card-content">
+      <h3>Login</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="card-content align-self-start">
+        <label>
+          Email
+          <input
+            id="email"
+            formControlName="email"
+          >
+        </label>
 
-      <label>
-        Password
-        <input
-          id="password"
-          formControlName="password"
-        >
-      </label>
+        <label>
+          Password
+          <input
+            id="password"
+            formControlName="password"
+          >
+        </label>
 
-      <button type="submit">Submit</button>
-    </form>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </div>
 </section>

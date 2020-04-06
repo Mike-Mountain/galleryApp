@@ -7,6 +7,7 @@ import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
+import {CoreModule} from './modules/core/core.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     environment.production ? [] : AkitaNgDevtools.forRoot(),
-    AkitaNgRouterStoreModule.forRoot()
+    AkitaNgRouterStoreModule.forRoot(),
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
