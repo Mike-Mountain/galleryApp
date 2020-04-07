@@ -1,1 +1,3 @@
-<p>home works!</p>
+<ng-container *ngIf="sessionQuery.user$ | async as user">
+  <h3 class="has-text-centered">Welcome {{user.username || 'New User'}}!</h3>
+</ng-container>
