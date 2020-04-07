@@ -1,58 +1,60 @@
 <section class="authentication">
   <div class="card w-50">
-    <div class="card-content">
-      <h3 class="has-text-centered">Login</h3>
-      <form [formGroup]="registerForm" (ngSubmit)="register()" class="auth-card">
-        <div class="field w-80">
-          <label class="label" for="username">Username</label>
-          <div class="control">
-            <input
-              class="input"
-              type="text"
-              id="username"
-              formControlName="username"
-            >
+    <app-spinner [isLoading]="isLoading">
+      <div class="card-content">
+        <h3 class="has-text-centered">Login</h3>
+        <form [formGroup]="registerForm" (ngSubmit)="register()" class="auth-card">
+          <div class="field w-80">
+            <label class="label" for="username">Username</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                id="username"
+                formControlName="username"
+              >
+            </div>
           </div>
-        </div>
 
-        <div class="field w-80">
-          <label class="label" for="email">Email</label>
-          <div class="control">
-            <input
-              class="input"
-              type="email"
-              id="email"
-              formControlName="email"
-            >
+          <div class="field w-80">
+            <label class="label" for="email">Email</label>
+            <div class="control">
+              <input
+                class="input"
+                type="email"
+                id="email"
+                formControlName="email"
+              >
+            </div>
           </div>
-        </div>
 
-        <div class="field w-80">
-          <label class="label" for="password">Password</label>
-          <div class="control">
-            <input
-              class="input"
-              type="password"
-              id="password"
-              formControlName="password"
-            >
+          <div class="field w-80">
+            <label class="label" for="password">Password</label>
+            <div class="control">
+              <input
+                class="input"
+                type="password"
+                id="password"
+                formControlName="password"
+              >
+            </div>
           </div>
-        </div>
 
-        <div class="field w-80">
-          <label class="label" for="confirmPassword">Confirm Password</label>
-          <div class="control">
-            <input
-              class="input"
-              type="password"
-              id="confirmPassword"
-              formControlName="confirmPassword"
-            >
+          <div class="field w-80">
+            <label class="label" for="confirmPassword">Confirm Password</label>
+            <div class="control">
+              <input
+                class="input"
+                type="password"
+                id="confirmPassword"
+                formControlName="confirmPassword"
+              >
+            </div>
           </div>
-        </div>
 
-        <button class="button is-light is-outlined is-primary" type="submit">Login</button>
-      </form>
-    </div>
+          <button class="button is-light is-outlined is-primary" type="submit">Login</button>
+        </form>
+      </div>
+    </app-spinner>
   </div>
 </section>

@@ -1,0 +1,18 @@
+<section class="spinner-wrap">
+  <ng-container *ngIf="!isLoading; else spin">
+    <ng-content></ng-content>
+  </ng-container>
+
+  <ng-template #spin>
+    <div class="spinner-box">
+      <div class="spinner">
+        <div class="face">
+          <div class="circle"></div>
+        </div>
+        <div class="face">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</section>

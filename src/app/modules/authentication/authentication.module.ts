@@ -5,6 +5,7 @@ import {AuthenticationRoutingModule} from './authentication-routing.module';
 import {LoginComponent} from './components/login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './components/register/register.component';
+import {SharedCommonModule} from '../../shared/modules/shared-common/shared-common.module';
 
 
 @NgModule({
@@ -12,11 +13,12 @@ import { RegisterComponent } from './components/register/register.component';
     LoginComponent,
     RegisterComponent
   ],
-  imports: [
-    CommonModule,
-    AuthenticationRoutingModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        AuthenticationRoutingModule,
+        ReactiveFormsModule,
+        SharedCommonModule
+    ]
 })
 export class AuthenticationModule {
 }

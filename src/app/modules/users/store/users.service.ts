@@ -7,6 +7,8 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
 import {SessionService} from '../../../shared/stores/session/session.service';
 import {SessionStore} from '../../../shared/stores/session/session.store';
+import {from} from 'rxjs';
+import {tap} from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
 @CollectionConfig({path: 'users'})
@@ -27,22 +29,17 @@ export class UsersService extends CollectionService<UsersState> {
       email: credentials.email,
       role: ['Admin']
     };
-    this.auth.createUserWithEmailAndPassword(credentials.email, credentials.password)
-      .then(u => {
+    return from(this.auth.createUserWithEmailAndPassword(credentials.email, credentials.password)).pipe(
+      tap((u) => {
         user.id = u.user.uid;
         this.fireStore.collection('users').doc(u.user.uid).set(user)
           .then(() => {
             this.store.add(user);
             this.sessionStore.update({user, token: u.user.refreshToken});
             this.router.navigateByUrl('/');
-          })
-          .catch(error => {
-            console.log(error);
           });
       })
-      .catch(error => {
-        console.log(error);
-      });
+    );
   }
 
 }

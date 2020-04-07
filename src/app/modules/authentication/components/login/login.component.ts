@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  isLoading: boolean;
 
   constructor(private formBuilder: FormBuilder,
               private sessionService: SessionService,
@@ -25,8 +26,13 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.isLoading = true;
     this.sessionService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe(() => {
+      this.isLoading = false;
       this.router.navigateByUrl('/');
+    }, error => {
+      console.log(error);
+      this.isLoading = false;
     });
   }
 

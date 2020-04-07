@@ -8,9 +8,15 @@ import {SessionQuery} from '../../../../shared/stores/session/session.query';
 })
 export class HomeComponent implements OnInit {
 
+  private loading: boolean;
+
   constructor(public sessionQuery: SessionQuery) { }
 
   ngOnInit(): void {
+  }
+
+  setLoading(loading) {
+    this.loading = loading;
   }
 
 }

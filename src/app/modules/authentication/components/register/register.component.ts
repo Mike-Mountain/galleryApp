@@ -11,6 +11,7 @@ import {UsersService} from '../../../users/store/users.service';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
+  isLoading: boolean;
 
   constructor(private formBuilder: FormBuilder,
               private userService: UsersService,
@@ -27,9 +28,16 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
+    this.isLoading = true;
     if (this.registerForm.value.password === this.registerForm.value.confirmPassword) {
-      const credentials: {email, username, password} = this.registerForm.value;
-      this.userService.register(credentials);
+      const credentials: { email, username, password } = this.registerForm.value;
+      this.userService.register(credentials).subscribe(() => {
+        this.isLoading = false;
+        this.router.navigateByUrl('/');
+      }, error => {
+        console.log(error);
+        this.isLoading = false;
+      });
     } else {
       alert('Passwords do not match!');
     }

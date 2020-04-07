@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './components/layout/layout.component';
 import {RouterModule} from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import {SharedCommonModule} from '../../shared/modules/shared-common/shared-common.module';
 
 
 
@@ -11,9 +12,10 @@ import { HomeComponent } from './components/home/home.component';
   exports: [
     LayoutComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule,
+        SharedCommonModule
+    ]
 })
 export class CoreModule { }
