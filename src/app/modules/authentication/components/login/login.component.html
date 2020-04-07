@@ -1,25 +1,33 @@
 <section class="authentication">
-  <div class="card">
+  <div class="card w-50">
     <div class="card-content">
-      <h3>Login</h3>
-      <form [formGroup]="loginForm" (ngSubmit)="login()" class="card-content align-self-start">
-        <label>
-          Email
-          <input
-            id="email"
-            formControlName="email"
-          >
-        </label>
+      <h3 class="has-text-centered">Login</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="auth-card">
+        <div class="field w-80">
+          <label class="label" for="email">Email</label>
+          <div class="control">
+            <input
+              class="input"
+              type="email"
+              id="email"
+              formControlName="email"
+            >
+          </div>
+        </div>
 
-        <label>
-          Password
-          <input
-            id="password"
-            formControlName="password"
-          >
-        </label>
+        <div class="field w-80">
+          <label class="label" for="password">Password</label>
+          <div class="control">
+            <input
+              class="input"
+              type="password"
+              id="password"
+              formControlName="password"
+            >
+          </div>
+        </div>
 
-        <button type="submit">Submit</button>
+        <button class="button is-light is-outlined is-primary" type="submit">Login</button>
       </form>
     </div>
   </div>
