@@ -20,6 +20,9 @@
     </div>
 
     <div class="navbar-end">
+      <a class="navbar-item" routerLink="/art/gallery">
+        Art Portfolio
+      </a>
       <ng-container *authenticatedWithRole="['Any']">
         <a class="navbar-item" (click)="logout()">
           Logout

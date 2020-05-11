@@ -9,7 +9,11 @@ const routes: Routes = [
     path: 'authentication',
     loadChildren: () => import('./modules/authentication/authentication.module').then(m => m.AuthenticationModule)
   },
-  {path: '', pathMatch: 'full', redirectTo: 'home'}
+  {
+    path: 'art',
+    loadChildren: () => import('./modules/art-portfolio/art-portfolio.module').then(m => m.ArtPortfolioModule)
+  },
+  {path: '', pathMatch: 'full', redirectTo: 'home'},
 ];
 
 @NgModule({

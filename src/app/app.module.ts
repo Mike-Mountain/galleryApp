@@ -8,6 +8,8 @@ import {environment} from '../environments/environment';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
 import {CoreModule} from './modules/core/core.module';
+import {NG_ENTITY_SERVICE_CONFIG} from '@datorama/akita-ng-entity-service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,15 @@ import {CoreModule} from './modules/core/core.module';
     AngularFireModule.initializeApp(environment.firebase),
     environment.production ? [] : AkitaNgDevtools.forRoot(),
     AkitaNgRouterStoreModule.forRoot(),
+    HttpClientModule,
     CoreModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: NG_ENTITY_SERVICE_CONFIG,
+      useValue: {baseUrl: 'http://localhost:8888/portfolio-host/wp-json/acf/v3'}
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,28 @@
+@import "../variables/theme-colors";
+
+.flow-gallery {
+  width: 100%;
+  height: 100%;
+  padding: .75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: rgba(0, 0, 0, .6);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.flow-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .4s ease;
+  &:hover {
+    cursor: pointer;
+    opacity: .6;
+  }
+}
+
+.flow-image {
+  max-width: 20rem;
+}

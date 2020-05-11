@@ -1,0 +1,6 @@
+main {
+  // height of the navbar is 3.25rem
+  max-height: calc(100vh - 3.25rem);
+  height: calc(100vh - 3.25rem);
+  overflow-y: auto;
+}

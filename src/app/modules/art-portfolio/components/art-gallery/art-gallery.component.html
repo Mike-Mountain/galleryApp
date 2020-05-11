@@ -1,0 +1,24 @@
+<section class="art-portfolio">
+  <div class="card has-background-grey-dark">
+    <div class="card-content">
+      <h3 class="is-size-3 has-text-centered has-text-light">Art Gallery</h3>
+    </div>
+  </div>
+  <br>
+  <app-spinner [isLoading]="loading">
+    <div class="flow-gallery">
+      <ng-container *ngIf="artGallery | async as gallery">
+        <ng-container *ngFor="let image of gallery">
+          <figure class="flow-image-container">
+            <img
+              class="flow-image"
+              alt="test"
+              [src]="image.acf.image"
+              (click)="viewDetails(image.id)"
+            >
+          </figure>
+        </ng-container>
+      </ng-container>
+    </div>
+  </app-spinner>
+</section>
