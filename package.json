@@ -23,6 +23,7 @@
     "@datorama/akita": "^4.22.0",
     "@datorama/akita-ng-entity-service": "^2.0.0",
     "akita-ng-fire": "^1.0.0",
+    "bootstrap": "^4.4.1",
     "bulma": "^0.8.1",
     "firebase": "^7.13.2",
     "rxjs": "~6.5.4",

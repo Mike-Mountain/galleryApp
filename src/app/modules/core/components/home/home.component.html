@@ -1,3 +1,9 @@
-<ng-container *ngIf="sessionQuery.user$ | async as user">
-  <h3 class="has-text-centered">Welcome {{user.username || 'New User'}}!</h3>
-</ng-container>
+<section class="home">
+  <div class="card w-80 mx-auto mt-4 opacity-8 has-background-dark">
+    <div class="card-content has-text-light">
+      <ng-container *ngIf="sessionQuery.user$ | async as user">
+        <h3 class="has-text-centered">Welcome {{user.username || 'New User'}}!</h3>
+      </ng-container>
+    </div>
+  </div>
+</section>

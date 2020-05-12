@@ -1,10 +1,10 @@
-<nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
+<nav class="navbar primary-nav" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="https://bulma.io">
       <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
     </a>
 
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+    <a role="button" class="navbar-burger burger has-text-light" aria-label="menu" aria-expanded="false"
        data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -14,25 +14,25 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" routerLink="/">
+      <a class="navbar-item has-text-light" routerLink="/">
         Home
       </a>
     </div>
 
     <div class="navbar-end">
-      <a class="navbar-item" routerLink="/art/gallery">
+      <a class="navbar-item has-text-light" routerLink="/art/gallery">
         Art Portfolio
       </a>
       <ng-container *authenticatedWithRole="['Any']">
-        <a class="navbar-item" (click)="logout()">
+        <a class="navbar-item has-text-light" (click)="logout()">
           Logout
         </a>
       </ng-container>
       <ng-container *authenticatedWithRole="['Unauthenticated']">
-        <a class="navbar-item" routerLink="/authentication/login">
+        <a class="navbar-item has-text-light" routerLink="/authentication/login">
           Login
         </a>
-        <a class="navbar-item" routerLink="/authentication/register">
+        <a class="navbar-item has-text-light" routerLink="/authentication/register">
           Register
         </a>
       </ng-container>

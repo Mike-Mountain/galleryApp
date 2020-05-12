@@ -1,36 +1,40 @@
 <section class="authentication">
-  <div class="card w-50">
-    <div class="card-content">
-      <app-spinner [isLoading]="isLoading">
-        <h3 class="has-text-centered">Login</h3>
-        <form [formGroup]="loginForm" (ngSubmit)="login()" class="auth-card">
-          <div class="field w-80">
-            <label class="label" for="email">Email</label>
-            <div class="control">
-              <input
-                class="input"
-                type="email"
-                id="email"
-                formControlName="email"
-              >
-            </div>
-          </div>
+  <div class="row w-100">
+    <div class="col-md-8 col-lg-4 col-sm-12 mx-auto">
+      <div class="card has-background-dark opacity-8">
+        <div class="card-content">
+          <app-spinner [isLoading]="isLoading">
+            <h3 class="has-text-centered has-text-light">Login</h3>
+            <form [formGroup]="loginForm" (ngSubmit)="login()" class="auth-card">
+              <div class="field w-80">
+                <label class="label" for="email">Email</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="email"
+                    id="email"
+                    formControlName="email"
+                  >
+                </div>
+              </div>
 
-          <div class="field w-80">
-            <label class="label" for="password">Password</label>
-            <div class="control">
-              <input
-                class="input"
-                type="password"
-                id="password"
-                formControlName="password"
-              >
-            </div>
-          </div>
+              <div class="field w-80">
+                <label class="label" for="password">Password</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="password"
+                    id="password"
+                    formControlName="password"
+                  >
+                </div>
+              </div>
 
-          <button class="button is-light is-outlined is-primary" type="submit">Login</button>
-        </form>
-      </app-spinner>
+              <button class="button is-light is-outlined is-primary" type="submit">Login</button>
+            </form>
+          </app-spinner>
+        </div>
+      </div>
     </div>
   </div>
 </section>

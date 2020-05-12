@@ -1,6 +1,20 @@
+@import "../../../../../scss/variables/theme-colors";
+
 main {
   // height of the navbar is 3.25rem
   max-height: calc(100vh - 3.25rem);
   height: calc(100vh - 3.25rem);
   overflow-y: auto;
+}
+
+.primary-nav {
+  box-shadow: 0 2px 4px rgba($primary, 0.15), 0 0 0 1px rgba($primary, 0.4);
+  background: linear-gradient(0deg, lighten($primary, 15%), $primary);
+  z-index: 1050;
+}
+
+.navbar-item {
+  &:hover {
+    color: $dark !important;
+  }
 }
